@@ -17,21 +17,35 @@ $('.name').each(function () {
     $(this).children().text(updatedNameStr);
 });
 
-$('a[href$="name"]').each(function () {
-    var fullNameStr = $(this).text();
-    var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
-    var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
-    var updatedNameStr = firstNameStr + " " + lastNameStr;
-    $(this).text(updatedNameStr);
-});
+window.setInterval(function () {
+    $('a[href$="name"]').each(function () {
+        var fullNameStr = $(this).text();
+        var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
+        var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
+        var updatedNameStr = firstNameStr + " " + lastNameStr;
+        $(this).text(updatedNameStr);
+    });
 
+    $('.new-miniprofile-container').each(function () {
+        var fullNameStr = $(this).text();
+        var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
+        var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
+        var updatedNameStr = firstNameStr + " " + lastNameStr;
+        console.log(updatedNameStr);
+        $(this).children().children().text(updatedNameStr);
+    });
 
+    $(function () {
+        if (document.location.href.indexOf('&trk=vsrp_people_sel') > -1) {
+            $('.new-miniprofile-container').each(function () {
+                var fullNameStr = $(this).text();
+                var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
+                var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
+                var updatedNameStr = firstNameStr + " " + lastNameStr;
+                console.log(updatedNameStr);
+                $(this).children().children().text(updatedNameStr);
+            });
+        }
+    });
 
-/*var name = $(".full-name").text();
-var first = name.slice(0, name.indexOf(" "));
-console.log(first);
-var second = name.slice(1, name.indexOf(" "));
-console.log(second);
-var shortened = first.charAt(0);
-
-$(".full-name").html(shortened + "." + second);*/
+}, 1000);
