@@ -1,6 +1,6 @@
 $(".profile-picture").hide();
 
-$(".full-name").each(function () {
+$(".full-name, .fn").each(function () {
     var fullNameStr = $(this).text();
     var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
     var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
