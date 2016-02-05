@@ -1,6 +1,6 @@
 $(".profile-picture").hide();
 
-$(".full-name, .fn").each(function () {
+$(".full-name, .connections-name, .title.main-headline").each(function () {
     var fullNameStr = $(this).text();
     var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
     var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
@@ -16,6 +16,15 @@ $('.name').each(function () {
 
     $(this).children().text(updatedNameStr);
 });
+
+$('a[href$="name"]').each(function () {
+    var fullNameStr = $(this).text();
+    var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
+    var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
+    var updatedNameStr = firstNameStr + " " + lastNameStr;
+    $(this).text(updatedNameStr);
+});
+
 
 
 /*var name = $(".full-name").text();
