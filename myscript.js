@@ -71,7 +71,7 @@ window.setInterval(function () {
 
 }, 1000);
 
-replaceFirstNameOnPage();
+
 
 function replaceFirstName(element) {
 	var fullNameStr = element.text();
