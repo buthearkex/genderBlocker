@@ -69,7 +69,7 @@ window.setInterval(function () {
 
     $(".image.member img").each(function(){
         if (!$(this).attr("kitten")){
-            $(this).attr("src","http://clementhamon.com/host/kittens/"+Math.floor(Math.random() * 15)+".jpg")
+            $(this).attr("src","http://clementhamon.com/host/kittens/"+(Math.floor(Math.random() * 14)+1)+".jpg")
             $(this).attr("kitten",true);    
         }
 
