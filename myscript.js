@@ -2,8 +2,9 @@ var profileName = $('.full-name').text();
 profileName = profileName.substr(0, profileName.indexOf(" "));
 var shortProfileName = profileName.charAt(0) + ".";
 
-$(".profile-picture").hide();
 $('.endorse-v2').hide();
+$(".profile-picture").hide();
+$('.props-container').hide();
 
 $(".full-name, .connections-name, .title.main-headline, .inbox-item-wonton .item-content.actions-left .participants").each(function () {
 	$(this).text(replacedStr = replaceFirstName($(this)));
