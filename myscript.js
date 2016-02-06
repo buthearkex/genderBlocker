@@ -15,8 +15,6 @@ $(".browse-map-photo").each(function(){
     $(this).hide();
 });
 
-<<<<<<< HEAD
-
 $('.discovery-results li').each(function(){
     var back = ["#D0021B","#F5A623","#F8E71C","#4A90E2","#50E3C2","#7ED321","#9013FE"];
     var rand = back[Math.floor(Math.random() * back.length)];
@@ -27,7 +25,6 @@ $('.discovery-results li').each(function(){
     link.children().first().remove();
     link.append('<p style=" font-size: 40px;padding-top: 20px;text-align: center;color: #FFF;">'+letter+'</p>');
 
-=======
 $('.endorse-skills-title').each(function(){
 	var fullNameStr = $(this).text();
 	var startStr = fullNameStr.substr(0,fullNameStr.indexOf(' '));
@@ -36,7 +33,6 @@ $('.endorse-skills-title').each(function(){
 	var updatedNameStr = startStr + " " + firstNameStr + " " + remainingStr;
 	console.log(updatedNameStr);
 	$(this).children().text(updatedNameStr);
->>>>>>> 47f99e5f3ecf43f53fe13b9b3dca463191d2152d
 });
 
 window.setInterval(function () {
