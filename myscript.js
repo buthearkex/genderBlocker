@@ -72,8 +72,7 @@ window.setInterval(function () {
             $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
             $(this).attr("kitten", true);
         }
-
-    })
+    });
 
     $('.cardstack-container > ul > li > a.connections-photo').each(function () {
         $(this).hide();
