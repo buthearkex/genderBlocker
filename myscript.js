@@ -96,12 +96,12 @@ window.setInterval(function () {
         }
     });
 
-    /**$('.endorser').each(function(){
-    var back = ["#D0021B","#F5A623","#F8E71C","#4A90E2","#50E3C2","#7ED321","#9013FE","#B8E986","#BD10E0"];
-    var rand = back[Math.floor(Math.random() * back.length)];
-    $(this).css("background-color",rand);
-    $(this).removeAttr("src");
-    });**/
+    $('.endorser').each(function(){
+        if (!$(this).attr("kitten")) {
+            $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
+            $(this).attr("kitten", true);
+        }
+    });
 
 }, 1000);
 
