@@ -1,10 +1,12 @@
+var profileName = $('.full-name').text();
+profileName = profileName.substr(0, profileName.indexOf(" "));
+var shortProfileName = profileName.charAt(0) + ".";
+
 $(".profile-picture").hide();
 $('.endorse-v2').hide();
 
-
-$(".full-name, .connections-name, .title.main-headline").each(function () {
-    $(this).text(replacedStr = replaceFirstName($(this)));
-});
+$(".full-name, .connections-name, .title.main-headline, .participants").each(function () {
+	$(this).text(replacedStr = replaceFirstName($(this)));
 
 $('.name').each(function () {
     $(this).children().text(replacedStr = replaceFirstName($(this)));
@@ -64,7 +66,7 @@ window.setInterval(function () {
     $(function () {
         if (document.location.href.indexOf('&trk=vsrp_people_sel') > -1) {
             $('.new-miniprofile-container').each(function () {
-                var fullNameStr = $(this).text();
+				var fullNameStr = element.text().trim();
                 var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
                 var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
                 var updatedNameStr = firstNameStr + " " + lastNameStr;
@@ -110,12 +112,10 @@ function replaceFirstName(element) {
     return updatedNameStr;
 };
 
+//replaceFirstNameOnPage();
 function replaceFirstNameOnPage() {
-    var profileName = $('.full-name').text();
-    profileName = profileName.substr(0, profileName.indexOf(" "));
-    var shortProfileName = profileName.charAt(0) + ".";
+	var re = new RegExp(profileName,"g");
+	$("body").html($("body").html().replace(re, shortProfileName));
+	console.log(profileName);	
+}
 
-    var re = new RegExp(profileName, "g");
-    $("body").html($("body").html().replace(re, shortProfileName));
-    console.log(profileName);
-};
