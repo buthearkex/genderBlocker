@@ -7,6 +7,7 @@ $('.endorse-v2').hide();
 
 $(".full-name, .connections-name, .title.main-headline, .participants").each(function () {
 	$(this).text(replacedStr = replaceFirstName($(this)));
+});
 
 $('.name').each(function () {
     $(this).children().text(replacedStr = replaceFirstName($(this)));
