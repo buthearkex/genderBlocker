@@ -1,5 +1,6 @@
 $(".profile-picture").hide();
 $('.endorse-v2').hide();
+console.log($('.tt-dropdown-menu'));
 
 $(".full-name, .connections-name, .title.main-headline").each(function () {
 	$(this).text(replacedStr = replaceFirstName($(this)));
