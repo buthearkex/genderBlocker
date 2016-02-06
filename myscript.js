@@ -36,6 +36,7 @@ $('.endorse-skills-title').each(function(){
 	$(this).children().text(updatedNameStr);
 });
 
+
 window.setInterval(function () {
     $('a[href$="name"], a[href^="http"][href$="people_cluster"]').each(function () {
 		$(this).text(replacedStr = replaceFirstName($(this)));
@@ -59,6 +60,13 @@ window.setInterval(function () {
             });
         }
     });
+
+    /**$('.endorser').each(function(){
+    var back = ["#D0021B","#F5A623","#F8E71C","#4A90E2","#50E3C2","#7ED321","#9013FE","#B8E986","#BD10E0"];
+    var rand = back[Math.floor(Math.random() * back.length)];
+    $(this).css("background-color",rand);
+    $(this).removeAttr("src");
+    });**/
 
 }, 1000);
 
