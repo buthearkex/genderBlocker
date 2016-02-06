@@ -1,3 +1,5 @@
+replaceFirstNameOnPage();
+
 $(".profile-picture").hide();
 $('.endorse-v2').hide();
 
@@ -55,4 +57,14 @@ function replaceFirstName(element) {
 	var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ')+1);
 	var updatedNameStr = firstNameStr + " " + lastNameStr;
 	return updatedNameStr;	
+}
+
+function replaceFirstNameOnPage() {
+	var profileName = $('.full-name').text();
+	profileName = profileName.substr(0, profileName.indexOf(" "));
+	var shortProfileName = profileName.charAt(0) + ".";
+
+	var re = new RegExp(profileName,"g");
+	$("body").html($("body").html().replace(re, shortProfileName));
+	console.log(profileName);	
 }
