@@ -46,6 +46,11 @@ window.setInterval(function () {
     $('.new-miniprofile-container').each(function () {
         $(this).children().children().text(replacedStr = replaceFirstName($(this)));
     });
+	
+	$('#mynetwork-item-.item').each(function(){
+		this).children('img').hide();
+		$(this).children('.item-headline').text(replacedStr = replaceFirstName($(this)));
+	});
 
     $(function () {
         if (document.location.href.indexOf('&trk=vsrp_people_sel') > -1) {
