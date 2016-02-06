@@ -1,6 +1,6 @@
 $(".profile-picture").hide();
 $('.endorse-v2').hide();
-console.log($('.tt-dropdown-menu'));
+
 
 $(".full-name, .connections-name, .title.main-headline").each(function () {
 	$(this).text(replacedStr = replaceFirstName($(this)));
@@ -43,6 +43,8 @@ window.setInterval(function () {
     $('a[href$="name"], a[href^="http"][href$="people_cluster"]').each(function () {
 		$(this).text(replacedStr = replaceFirstName($(this)));
     });
+	
+	console.log(document.getElementById('search-autocomplete-container').innerHTML);
 
     $('.new-miniprofile-container').each(function () {
 <<<<<<< HEAD
