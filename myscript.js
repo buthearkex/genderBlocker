@@ -2,11 +2,12 @@ var profileName = $('.full-name').text();
 profileName = profileName.substr(0, profileName.indexOf(" "));
 var shortProfileName = profileName.charAt(0) + ".";
 
-$(".profile-picture").hide();
 $('.endorse-v2').hide();
+$(".profile-picture").hide();
+$('.props-container').hide();
 
-$(".full-name, .connections-name, .title.main-headline, .participants").each(function () {
-    $(this).text(replacedStr = replaceFirstName($(this)));
+$(".full-name, .connections-name, .title.main-headline, .inbox-item-wonton .item-content.actions-left .participants").each(function () {
+	$(this).text(replacedStr = replaceFirstName($(this)));
 });
 
 $('.name').each(function () {
@@ -17,7 +18,6 @@ $(".browse-map-photo").each(function () {
     $(this).parent().css("height", "60px");
     $(this).hide();
 });
-
 
 $('.discovery-results li').each(function () {
     var back = ["#D0021B", "#F5A623", "#F8E71C", "#4A90E2", "#50E3C2", "#7ED321", "#9013FE", "#B8E986", "#BD10E0"];
@@ -47,7 +47,6 @@ $(".result.people .result-image img").each(function () {
     }
 });
 
-
 window.setInterval(function () {
     $('a[href$="name"], a[href^="http"][href$="people_cluster"]').each(function () {
         $(this).text(replacedStr = replaceFirstName($(this)));
@@ -59,10 +58,10 @@ window.setInterval(function () {
         $(this).children().children().text(replacedStr = replaceFirstName($(this)));
     });
 
-    $('#mynetwork-item-.item').each(function () {
-        $(this).children('img').hide();
-        $(this).children('.item-headline').text(replacedStr = replaceFirstName($(this)));
-    });
+	$("[id^=mynetwork-item-]").each(function(){
+		$(this).children('img').hide();
+		$(this).children('.item-headline').text(replacedStr = replaceFirstName($(this)));
+	});
 
     $(function () {
         if (document.location.href.indexOf('&trk=vsrp_people_sel') > -1) {
@@ -82,8 +81,7 @@ window.setInterval(function () {
             $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
             $(this).attr("kitten", true);
         }
-
-    })
+    });
 
     $('.cardstack-container > ul > li > a.connections-photo').each(function () {
         $(this).hide();
@@ -106,7 +104,7 @@ window.setInterval(function () {
 }, 1000);
 
 function replaceFirstName(element) {
-    var fullNameStr = element.text();
+    var fullNameStr = element.text().trim();
     var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
     var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
     var updatedNameStr = firstNameStr + " " + lastNameStr;
@@ -115,7 +113,7 @@ function replaceFirstName(element) {
 
 //replaceFirstNameOnPage();
 function replaceFirstNameOnPage() {
-    var re = new RegExp(profileName, "g");
-    $("body").html($("body").html().replace(re, shortProfileName));
-    console.log(profileName);
-}
+	var re = new RegExp(profileName,"g");
+	$("body").html($("body").html().replace(re, shortProfileName));
+	console.log(profileName);	
+};
