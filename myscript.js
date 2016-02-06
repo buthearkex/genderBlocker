@@ -6,7 +6,8 @@ $(".profile-picture").hide();
 $('.endorse-v2').hide();
 
 $(".full-name, .connections-name, .title.main-headline, .participants").each(function () {
-	$(this).text(replacedStr = replaceFirstName($(this)));
+    $(this).text(replacedStr = replaceFirstName($(this)));
+});
 
 $('.name').each(function () {
     $(this).children().text(replacedStr = replaceFirstName($(this)));
@@ -39,11 +40,11 @@ $('.endorse-skills-title').each(function () {
     $(this).children().text(updatedNameStr);
 });
 
-$(".result.people .result-image img").each(function(){
-        if (!$(this).attr("kitten")) {
-            $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
-            $(this).attr("kitten", true);
-        }
+$(".result.people .result-image img").each(function () {
+    if (!$(this).attr("kitten")) {
+        $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
+        $(this).attr("kitten", true);
+    }
 });
 
 
@@ -66,7 +67,7 @@ window.setInterval(function () {
     $(function () {
         if (document.location.href.indexOf('&trk=vsrp_people_sel') > -1) {
             $('.new-miniprofile-container').each(function () {
-				var fullNameStr = element.text().trim();
+                var fullNameStr = element.text().trim();
                 var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
                 var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
                 var updatedNameStr = firstNameStr + " " + lastNameStr;
@@ -88,8 +89,8 @@ window.setInterval(function () {
         $(this).hide();
     });
 
-    $(".result.people .result-image img").each(function(){
-         if (!$(this).attr("kitten")) {
+    $(".result.people .result-image img").each(function () {
+        if (!$(this).attr("kitten")) {
             $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
             $(this).attr("kitten", true);
         }
@@ -114,8 +115,7 @@ function replaceFirstName(element) {
 
 //replaceFirstNameOnPage();
 function replaceFirstNameOnPage() {
-	var re = new RegExp(profileName,"g");
-	$("body").html($("body").html().replace(re, shortProfileName));
-	console.log(profileName);	
+    var re = new RegExp(profileName, "g");
+    $("body").html($("body").html().replace(re, shortProfileName));
+    console.log(profileName);
 }
-
