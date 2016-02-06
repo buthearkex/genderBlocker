@@ -22,6 +22,7 @@ $(".browse-map-photo").each(function(){
     $(this).hide();
 });
 
+
 window.setInterval(function () {
     $('a[href$="name"]').each(function () {
         var fullNameStr = $(this).text();
@@ -36,7 +37,7 @@ window.setInterval(function () {
         var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
         var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
         var updatedNameStr = firstNameStr + " " + lastNameStr;
-        console.log(updatedNameStr);
+        //console.log(updatedNameStr);
         $(this).children().children().text(updatedNameStr);
     });
 
