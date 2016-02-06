@@ -61,15 +61,13 @@ window.setInterval(function () {
 
 }, 1000);
 
-
-
 function replaceFirstName(element) {
 	var fullNameStr = element.text();
 	var firstNameStr = fullNameStr.substr(0,fullNameStr.indexOf(' ')).charAt(0) + ".";
 	var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ')+1);
 	var updatedNameStr = firstNameStr + " " + lastNameStr;
 	return updatedNameStr;	
-}
+};
 
 function replaceFirstNameOnPage() {
 	var profileName = $('.full-name').text();
@@ -79,4 +77,5 @@ function replaceFirstNameOnPage() {
 	var re = new RegExp(profileName,"g");
 	$("body").html($("body").html().replace(re, shortProfileName));
 	console.log(profileName);	
-}
+};
+
