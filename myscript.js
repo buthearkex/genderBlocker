@@ -43,16 +43,7 @@ window.setInterval(function () {
 	console.log(document.getElementById('search-autocomplete-container').innerHTML);
 
     $('.new-miniprofile-container').each(function () {
-<<<<<<< HEAD
-        var fullNameStr = $(this).text();
-        var firstNameStr = fullNameStr.substr(0, fullNameStr.indexOf(' ')).charAt(0) + ".";
-        var lastNameStr = fullNameStr.substr(fullNameStr.indexOf(' ') + 1);
-        var updatedNameStr = firstNameStr + " " + lastNameStr;
-        //console.log(updatedNameStr);
-        $(this).children().children().text(updatedNameStr);
-=======
         $(this).children().children().text(replacedStr = replaceFirstName($(this)));
->>>>>>> 47f99e5f3ecf43f53fe13b9b3dca463191d2152d
     });
 
     $(function () {
