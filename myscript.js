@@ -101,5 +101,5 @@ function replaceFirstNameOnPage() {
 	var re = new RegExp(profileName,"g");
 	$("body").html($("body").html().replace(re, shortProfileName));
 	console.log(profileName);	
-}
+};
 
