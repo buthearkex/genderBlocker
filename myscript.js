@@ -4,7 +4,7 @@ var shortProfileName = profileName.charAt(0) + ".";
 
 $('.endorse-v2').hide();
 $(".profile-picture").hide();
-$('.props-container').hide();
+$('#right-rail').hide();
 
 $(".full-name, .connections-name, .title.main-headline, .inbox-item-wonton .item-content.actions-left .participants").each(function () {
 	$(this).text(replacedStr = replaceFirstName($(this)));
