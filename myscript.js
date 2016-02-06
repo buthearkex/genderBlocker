@@ -24,7 +24,8 @@ $('.discovery-results li').each(function(){
     var letter = link.next().children().first().children().first().text().slice(0,1);
     link.children().first().remove();
     link.append('<p style=" font-size: 40px;padding-top: 20px;text-align: center;color: #FFF;">'+letter+'</p>');
-
+};
+	
 $('.endorse-skills-title').each(function(){
 	var fullNameStr = $(this).text();
 	var startStr = fullNameStr.substr(0,fullNameStr.indexOf(' '));
