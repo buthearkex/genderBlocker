@@ -26,6 +26,12 @@ $('a[href$="name"]').each(function () {
 });
 
 
+$(".browse-map-photo").each(function(){
+    $(this).parent().css("height","60px");
+    $(this).hide();
+});
+
+
 
 /*var name = $(".full-name").text();
 var first = name.slice(0, name.indexOf(" "));
