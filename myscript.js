@@ -15,9 +15,6 @@ $(".browse-map-photo").each(function(){
     $(this).hide();
 });
 
-$(".image.member img").each(function(){
-    $(this).attr("src","http://clementhamon.com/host/kittens/"+Math.floor(Math.random() * 15)+".jpg")
-})
 
 $('.discovery-results li').each(function(){
     var back = ["#D0021B","#F5A623","#F8E71C","#4A90E2","#50E3C2","#7ED321","#9013FE","#B8E986","#BD10E0"];
@@ -69,6 +66,14 @@ window.setInterval(function () {
             });
         }
     });
+
+    $(".image.member img").each(function(){
+        if (!$(this).attr("kitten")){
+            $(this).attr("src","http://clementhamon.com/host/kittens/"+Math.floor(Math.random() * 15)+".jpg")
+            $(this).attr("kitten",true);    
+        }
+
+    })
 
     /**$('.endorser').each(function(){
     var back = ["#D0021B","#F5A623","#F8E71C","#4A90E2","#50E3C2","#7ED321","#9013FE","#B8E986","#BD10E0"];
