@@ -39,6 +39,13 @@ $('.endorse-skills-title').each(function () {
     $(this).children().text(updatedNameStr);
 });
 
+$(".result.people .result-image img").each(function(){
+        if (!$(this).attr("kitten")) {
+            $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
+            $(this).attr("kitten", true);
+        }
+});
+
 window.setInterval(function () {
     $('a[href$="name"], a[href^="http"][href$="people_cluster"]').each(function () {
         $(this).text(replacedStr = replaceFirstName($(this)));
@@ -77,6 +84,13 @@ window.setInterval(function () {
 
     $('.cardstack-container > ul > li > a.connections-photo').each(function () {
         $(this).hide();
+    });
+
+    $(".result.people .result-image img").each(function(){
+         if (!$(this).attr("kitten")) {
+            $(this).attr("src", "http://clementhamon.com/host/kittens/" + (Math.floor(Math.random() * 14) + 1) + ".jpg")
+            $(this).attr("kitten", true);
+        }
     });
 
     /**$('.endorser').each(function(){
