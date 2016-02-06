@@ -101,7 +101,7 @@ window.setInterval(function () {
     $(this).removeAttr("src");
     });**/
 
-}, 1000);
+}, 200);
 
 function replaceFirstName(element) {
     var fullNameStr = element.text().trim();
