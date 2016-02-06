@@ -48,7 +48,7 @@ window.setInterval(function () {
     });
 	
 	$('#mynetwork-item-.item').each(function(){
-		this).children('img').hide();
+		$(this).children('img').hide();
 		$(this).children('.item-headline').text(replacedStr = replaceFirstName($(this)));
 	});
 
